@@ -16,6 +16,7 @@
 		BF60886E20BE695E00434794 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60886D20BE695E00434794 /* TodayViewController.swift */; };
 		BF60887120BE695E00434794 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF60886F20BE695E00434794 /* MainInterface.storyboard */; };
 		BF60887520BE695E00434794 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF60886820BE695E00434794 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF9D88A020CE1E8B00A669B7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9D889F20CE1E8B00A669B7 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,9 @@
 		BF60886D20BE695E00434794 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BF60887020BE695E00434794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BF60887220BE695E00434794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9D889D20CE15C900A669B7 /* Polyglot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Polyglot.entitlements; sourceTree = "<group>"; };
+		BF9D889E20CE162C00A669B7 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		BF9D889F20CE1E8B00A669B7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		BF60885120BA6CBE00434794 /* Polyglot */ = {
 			isa = PBXGroup;
 			children = (
+				BF9D889F20CE1E8B00A669B7 /* TestViewController.swift */,
+				BF9D889D20CE15C900A669B7 /* Polyglot.entitlements */,
 				BF60885220BA6CBE00434794 /* AppDelegate.swift */,
 				BF60885420BA6CBE00434794 /* ViewController.swift */,
 				BF60885620BA6CBE00434794 /* Main.storyboard */,
@@ -119,6 +125,7 @@
 		BF60886C20BE695E00434794 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				BF9D889E20CE162C00A669B7 /* Widget.entitlements */,
 				BF60886D20BE695E00434794 /* TodayViewController.swift */,
 				BF60886F20BE695E00434794 /* MainInterface.storyboard */,
 				BF60887220BE695E00434794 /* Info.plist */,
@@ -177,9 +184,19 @@
 				TargetAttributes = {
 					BF60884E20BA6CBE00434794 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BF60886720BE695E00434794 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -229,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF60885520BA6CBE00434794 /* ViewController.swift in Sources */,
+				BF9D88A020CE1E8B00A669B7 /* TestViewController.swift in Sources */,
 				BF60885320BA6CBE00434794 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +416,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Polyglot/Polyglot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ADP3UVM5F;
 				INFOPLIST_FILE = Polyglot/Info.plist;
@@ -417,6 +436,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Polyglot/Polyglot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ADP3UVM5F;
 				INFOPLIST_FILE = Polyglot/Info.plist;
@@ -434,6 +454,7 @@
 		BF60887720BE695E00434794 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ADP3UVM5F;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -453,6 +474,7 @@
 		BF60887820BE695E00434794 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ADP3UVM5F;
 				INFOPLIST_FILE = Widget/Info.plist;

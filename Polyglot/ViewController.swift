@@ -19,12 +19,12 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = titleAttributes
         title = "POLYGLOT"
         
-        let defaults = UserDefaults.standard
-        
-        if let savedWords = defaults.object(forKey: "Words") as? [String] {
-            words = savedWords
-        } else {
-            saveInitialValues(to: defaults)
+        if let defaults = UserDefaults(suiteName: "group.com.amreinhard.Polyglot") {
+            if let savedWords = defaults.object(forKey: "Words") as? [String] {
+                words = savedWords
+            } else {
+                saveInitialValues(to: defaults)
+            }
         }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewWord))
@@ -47,6 +47,9 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = split[0]
         
         cell.detailTextLabel?.text = ""
+        
+        cell.selectedBackgroundView = UIView()
+        cell.selectedBackgroundView!.backgroundColor = UIColor(white: 1, alpha: 0.20)
         
         return cell
     }
@@ -77,8 +80,9 @@ class ViewController: UITableViewController {
     }
     
     func saveWords() {
-        let defaults = UserDefaults.standard
+        if let defaults = UserDefaults(suiteName: "group.com.amreinhard.Polyglot") {
         defaults.set(words, forKey: "Words")
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
